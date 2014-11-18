@@ -3,28 +3,35 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package geeksforgeeks;
+package bst;
 
 /**
  *
  * @author neelabh
  */
 import java.util.*;
-public class TreeNode {
+public class Tree {
+    TreeNode root;
     
-    int data;
-    TreeNode lChild;
-    TreeNode rChild;
-    TreeNode(int data){
-        this.data=data;
+    public static void main(String [] args){
+        Tree tree=new Tree();
+        tree.root=null;
+        Scanner scan=new Scanner(System.in);
+        int size=scan.nextInt();
+        for(int i=0;i<size;i++){
+            int data=scan.nextInt();
+            tree.root=tree.insertChild(data, tree.root);
+        }
+        tree.inOrderTrversal(tree.root);
+        
     }
-    private static TreeNode insertChild(int data, TreeNode root){
+    private  TreeNode insertChild(int data, TreeNode root){
         if(root==null){
             root=new TreeNode(data);
         }
         else
         {
-            if(root.data<data)
+            if(root.data>data)
                 root.lChild=insertChild(data, root.lChild);
             else
                 root.rChild=insertChild(data,root.rChild);
@@ -32,21 +39,11 @@ public class TreeNode {
         return root;
     }
     //Inorder traversal
-    private static void inOrderTrversal(TreeNode root){
+    private void inOrderTrversal(TreeNode root){
         if(root==null)
             return;
         inOrderTrversal(root.lChild);
-        System.out.println(root.data+" ");
+        System.out.print(root.data+" ");
         inOrderTrversal(root.rChild);
-    }
-    public static void main(String [] args){
-        Scanner scan=new Scanner(System.in);
-        int size=scan.nextInt();
-        TreeNode root=null;
-        for(int i=0;i<size;i++){
-            int data=scan.nextInt();
-            root=insertChild(data, root);
-        }
-        inOrderTrversal(root);
     }
 }
