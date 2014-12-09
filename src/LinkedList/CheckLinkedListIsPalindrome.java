@@ -46,7 +46,7 @@ public class CheckLinkedListIsPalindrome {
         }
         else
             head2=slow;
-        previous.next=null;                
+        previous.next=null;           // This is very important stapes     
         head2=reverseList(head2);       
         boolean result=compareList(head,head2);        
         head2=reverseList(head2);
