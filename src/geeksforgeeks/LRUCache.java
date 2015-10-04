@@ -12,7 +12,7 @@ import java.util.*;
  * @author Neelabh
  */
 public class LRUCache {
-    List<Node> queue=new Queue<Node>();
+    //List<Node> queue=new Queue<Node>();
     
 }
 class Node{

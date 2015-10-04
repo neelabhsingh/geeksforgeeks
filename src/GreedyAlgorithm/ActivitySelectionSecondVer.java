@@ -15,7 +15,7 @@ public class ActivitySelectionSecondVer {
         Scanner scan=new Scanner(System.in);
         
     }
-    public static int jobMachine(String [] input){
-        
-    }
+//    public static int jobMachine(String [] input){
+//        
+//    }
 }
